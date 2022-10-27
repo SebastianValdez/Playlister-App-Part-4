@@ -137,6 +137,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
+}
+
+/* ! Fixes the issue where the home and logout button couldnt be clicked */
+.MuiButtonBase-root  {
+  z-index: 2;
+}
+
+.MuiTypography-root  {
+  z-index: 2;
 }
 
 #add-list-button {
