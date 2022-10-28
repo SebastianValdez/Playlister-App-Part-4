@@ -57,10 +57,8 @@ export default function MUIEditSongModal() {
           className="modal is-visible"
           data-animation="slideInOutLeft"
         >
-          <div id="edit-song-root" className="modal-root">
-            <div id="edit-song-modal-header" className="modal-north">
-              Edit Song
-            </div>
+          <div id="edit-song-root" className="modal-dialog">
+            <header className="dialog-header">Edit Song</header>
             <div id="edit-song-modal-content" className="modal-center">
               <div id="title-prompt" className="modal-prompt">
                 Title:
@@ -83,7 +81,7 @@ export default function MUIEditSongModal() {
                 onChange={handleUpdateArtist}
               />
               <div id="you-tube-id-prompt" className="modal-prompt">
-                You Tube Id:
+                YouTube Id:
               </div>
               <input
                 id="edit-song-modal-youTubeId-textfield"
@@ -93,7 +91,7 @@ export default function MUIEditSongModal() {
                 onChange={handleUpdateYouTubeId}
               />
             </div>
-            <div className="modal-south">
+            <div id="confirm-cancel-container">
               <input
                 type="button"
                 id="edit-song-confirm-button"

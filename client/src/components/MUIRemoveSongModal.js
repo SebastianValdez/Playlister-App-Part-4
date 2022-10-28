@@ -46,15 +46,16 @@ export default function MUIRemoveSongModal() {
           className={modalClass}
           data-animation="slideInOutLeft"
         >
-          <div className="modal-root" id="verify-remove-song-root">
-            <div className="modal-north">Remove {songTitle}?</div>
-            <div className="modal-center">
-              <div className="modal-center-content">
-                Are you sure you wish to permanently remove {songTitle} from the
-                playlist?
+          <div className="modal-dialog" id="verify-remove-song-root">
+            <header className="dialog-header">
+              Remove {songTitle}?
+              <div className="">
+                Are you sure you wish to permanently remove <b>{songTitle}</b>{" "}
+                from the playlist?
               </div>
-            </div>
-            <div className="modal-south">
+            </header>
+
+            <div id="confirm-cancel-container">
               <input
                 type="button"
                 id="remove-song-confirm-button"
