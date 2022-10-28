@@ -203,6 +203,14 @@ body {
   transform: scale(2);
 }
 
+#playlister-statusbar {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  
+  background-color: var(--swatch-complement);
+}
+
 #workspace-home,
 #workspace-edit {
   position: absolute;
