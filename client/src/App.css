@@ -140,6 +140,10 @@ body {
   z-index: 1;
 }
 
+.modal-textfield {
+  width: 100%;
+}
+
 /* ! Fixes the issue where the home and logout button couldnt be clicked */
 .MuiButtonBase-root  {
   z-index: 2;
@@ -301,6 +305,28 @@ input {
   transition: all 0.35s ease-in;
   font-family: var(--font-primary);
 } */
+
+#remove-song-title {
+  display: flex;
+  justify-content: center;
+  border-bottom: #111111;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding: 2px;
+  margin-bottom: 2px;
+  font-size: 42px;
+}
+
+#edit-song-header {
+  display: flex;
+  justify-content: center;
+  font-size: 42px;
+}
+
+.modal-prompt {
+  font-size: 32px;
+  padding-top: 2px;
+}
 
 .modal.is-visible {
   visibility: visible;

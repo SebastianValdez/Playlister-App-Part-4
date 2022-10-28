@@ -9,11 +9,12 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 800,
   bgcolor: "background.paper",
   border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+  borderRadius: "2%",
+  boxShadow: 5,
+  p: 3,
 };
 
 export default function MUIRemoveSongModal() {
@@ -48,7 +49,7 @@ export default function MUIRemoveSongModal() {
         >
           <div className="modal-dialog" id="verify-remove-song-root">
             <header className="dialog-header">
-              Remove {songTitle}?
+              <div id="remove-song-title">Remove {songTitle}?</div>
               <div className="">
                 Are you sure you wish to permanently remove <b>{songTitle}</b>{" "}
                 from the playlist?

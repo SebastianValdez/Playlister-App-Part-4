@@ -12,8 +12,9 @@ const style = {
   width: 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+  borderRadius: "2%",
+  boxShadow: 5,
+  p: 3,
 };
 
 export default function MUIEditSongModal() {
@@ -58,7 +59,9 @@ export default function MUIEditSongModal() {
           data-animation="slideInOutLeft"
         >
           <div id="edit-song-root" className="modal-dialog">
-            <header className="dialog-header">Edit Song</header>
+            <header className="dialog-header" id="edit-song-header">
+              Edit Song
+            </header>
             <div id="edit-song-modal-content" className="modal-center">
               <div id="title-prompt" className="modal-prompt">
                 Title:
