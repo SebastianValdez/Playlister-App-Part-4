@@ -76,35 +76,74 @@ function AuthContextProvider(props) {
     password,
     passwordVerify
   ) {
-    const response = await api.registerUser(
-      firstName,
-      lastName,
-      email,
-      password,
-      passwordVerify
-    );
-    if (response.status === 200) {
-      authReducer({
-        type: AuthActionType.REGISTER_USER,
-        payload: {
-          user: response.data.user,
-        },
-      });
-      // history.push("/login");
-      auth.loginUser(email, password); // ! Automatically logins a new user
+    try {
+      const response = await api.registerUser(
+        firstName,
+        lastName,
+        email,
+        password,
+        passwordVerify
+      );
+      if (response.status === 200) {
+        authReducer({
+          type: AuthActionType.REGISTER_USER,
+          payload: {
+            user: response.data.user,
+          },
+        });
+        // history.push("/login");
+        auth.loginUser(email, password); // ! Automatically logins a new user
+      }
+    } catch (error) {
+      console.log(error);
+      if (
+        error.response.data.errorMessage === "Please enter all required fields."
+      ) {
+        // ! If not all fields are inputted
+        console.log("HANO 1");
+      } else if (
+        error.response.data.errorMessage ===
+        "Please enter a password of at least 8 characters."
+      ) {
+        // ! If the passoword is less than 8 characters
+        console.log("HANO 2");
+      } else if (
+        error.response.data.errorMessage ===
+        "Please enter the same password twice."
+      ) {
+        // ! If the second password wasnt inputted
+        console.log("HANO 3");
+      } else if (
+        error.response.data.errorMessage ===
+        "An account with this email address already exists."
+      ) {
+        // ! If the account already exists
+        console.log("HANO 4");
+      }
     }
   };
 
   auth.loginUser = async function (email, password) {
-    const response = await api.loginUser(email, password);
-    if (response.status === 200) {
-      authReducer({
-        type: AuthActionType.LOGIN_USER,
-        payload: {
-          user: response.data.user,
-        },
-      });
-      history.push("/");
+    try {
+      const response = await api.loginUser(email, password);
+      if (response.status === 200) {
+        authReducer({
+          type: AuthActionType.LOGIN_USER,
+          payload: {
+            user: response.data.user,
+          },
+        });
+        history.push("/");
+      }
+    } catch (error) {
+      console.log("Error: ", error);
+      if (error.response.status === 400) {
+        // ! Opens the modal when not all arguments are put in the input boxes for loggin in
+        console.log("Fuck you bro");
+      } else if (error.response.status === 401) {
+        // ! Opens the modal when an invalid username and/or password was entered
+        console.log("Fuck you dude");
+      }
     }
   };
 

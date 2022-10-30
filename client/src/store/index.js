@@ -262,7 +262,7 @@ function GlobalStoreContextProvider(props) {
         updateList(playlist);
       }
     }
-    asyncChangeListName(id);
+    if (newName) asyncChangeListName(id); // ! Fixes bug where the edit list errors if no changes made to name
   };
 
   // THIS FUNCTION PROCESSES CLOSING THE CURRENTLY LOADED LIST
