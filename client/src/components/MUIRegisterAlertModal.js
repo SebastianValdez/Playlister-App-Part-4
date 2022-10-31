@@ -19,7 +19,7 @@ const style = {
   p: 3,
 };
 
-export default function MUILoginAlertModal() {
+export default function MUIRegisterAlertModal() {
   const { auth } = useContext(AuthContext);
 
   function handleCloseModal() {
