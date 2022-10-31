@@ -347,7 +347,9 @@ function GlobalStoreContextProvider(props) {
       }
     }
     processDelete(id);
+    store.loadIdNamePairs();
   };
+
   store.deleteMarkedList = function () {
     store.deleteList(store.listIdMarkedForDeletion);
     store.hideModals();

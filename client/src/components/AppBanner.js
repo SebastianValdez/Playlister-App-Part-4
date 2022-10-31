@@ -104,7 +104,7 @@ export default function AppBanner() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            <Link style={{ textDecoration: "none", color: "white" }} to="/">
+            <Link style={{ textDecoration: "none", color: "black" }} to="/">
               ⌂
             </Link>
           </Typography>
@@ -118,6 +118,7 @@ export default function AppBanner() {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
+              style={{ textDecoration: "none", color: "black" }}
             >
               {getAccountMenu(auth.loggedIn)}
             </IconButton>

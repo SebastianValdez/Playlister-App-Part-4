@@ -12,11 +12,9 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 500,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  borderRadius: "2%",
+  borderRadius: "1.5%",
   boxShadow: 5,
-  p: 3,
+  p: 2,
 };
 
 export default function MUILoginAlertModal() {
@@ -28,12 +26,10 @@ export default function MUILoginAlertModal() {
 
   return (
     <Modal open={true}>
-      <Box sx={style}>
-        <Alert severity="error" onClose={handleCloseModal}>
-          <AlertTitle>Error</AlertTitle>
-          <strong>{auth.errorType}</strong>
-        </Alert>
-      </Box>
+      <Alert sx={style} severity="error" onClose={handleCloseModal}>
+        <AlertTitle>Error</AlertTitle>
+        <strong>{auth.errorType}</strong>
+      </Alert>
     </Modal>
   );
 }
