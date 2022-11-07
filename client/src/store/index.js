@@ -300,6 +300,7 @@ function GlobalStoreContextProvider(props) {
     async function asyncLoadIdNamePairs() {
       const response = await api.getPlaylistPairs();
       if (response.data.success) {
+        tps.clearAllTransactions();
         let pairsArray = response.data.idNamePairs;
         storeReducer({
           type: GlobalStoreActionType.LOAD_ID_NAME_PAIRS,
